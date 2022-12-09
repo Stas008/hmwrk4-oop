@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Xbowman extends Base {
-    public Xbowman(List<Base> gang, int x, int y) {
-        super(6, 3, 16, new int[]{2,3}, 10, 4, false, false, "Xbowman");
-        super.gang = gang;
+    public Xbowman(List<Base> gang, int x, int y, String fraction) {
+        super(6, 3, 16, new int[]{2,3}, 10, 4, false, false, "Xbowman",fraction);
+        super.gang = (ArrayList<Base>) gang;
         super.position = new Vector2(x, y);}
     
     public int getShoot(){
@@ -18,7 +18,7 @@ public class Xbowman extends Base {
     }
 
     @Override
-    public void step(ArrayList<Base>){
+    public void step(Party party){
         for (Base h: this.gang){
             if ((h.getName().equals("Peasant")) & (h.status=="stand")){
                 this.shoot++;

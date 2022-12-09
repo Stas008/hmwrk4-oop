@@ -21,7 +21,9 @@ public class ConsoleView {
             for (int j = 1; j <= Main.GANG_SIZE; j++) {
                 System.out.print(getChar(new Vector2(i, j)));
             }
-            System.out.println("|"+spaces(3)+Main.whiteSide.get(i-1).getName()+spaces(12-Main.whiteSide.get(i-1).getName().length())+Main.darkSide.get(i-1).getName());
+            System.out.println("|"+spaces(3)+Main.whiteSide.get(i-1).getName()+spaces(12-Main.whiteSide.get(i-1).getName().length())+
+            Main.whiteSide.get(i-1).getHealth()+" "+Main.whiteSide.get(i-1).getStatus()
+            +Main.darkSide.get(i-1).getName()+" "+Main.darkSide.get(i-1).getHealth()+" "+Main.darkSide.get(i-1).getStatus());
             System.out.println(ConsoleView.mid10);
         }
 

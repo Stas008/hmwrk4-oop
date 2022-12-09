@@ -11,4 +11,11 @@ public class Vector2 {
         if (pos.y == y & pos.x ==x) return true;
         return false;
     }
+    @Override
+    public String toString(){
+        return "( "+x+","+y+")";
+    }
+    public float getDistance(Vector2 vector2){
+        return (float) Math.sqrt((x-vector2.x)^2+(y-vector2.y));
+    }
 }
