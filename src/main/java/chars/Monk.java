@@ -21,6 +21,26 @@ public class Monk extends Base {
                 mostDamegedInd=i;
             }
         }
+        if (0.75 >= mostDamagedInd) {
+            ArrayList <BaseHero> enemies = party.getByFraction(fraction, false);
+            for (int i = 1; i < enemies.size(); i++) {
+                if(((float) (enemies.get(i).health / enemies.get(i).maxHealth)) < mostDamaged) {
+                    mostDamagedInd = i;
+                    mostDamaged = (float) (enemies.get(i).health / enemies.get(i).maxHealth);
+                }
+            }
+            target = enemies.get(mostDamagedInd);
+            damageValue = -damage[0];
+            target.damage(damageValue);
+        }
+        else {
+            target = allies.get(mostDamagedInd);
+            if (mostDamaged == 0) { damageValue = -1; target.status = "stand"; }
+            else damageValue = damage[0];
+            target.damage(damageValue);
+        }
+
+
         myGang.get(mostDamegedInd).damage(damage[0]);
         myGang.get(mostDamegedInd).status="stand";
 

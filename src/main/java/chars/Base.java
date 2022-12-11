@@ -25,9 +25,10 @@ public abstract class Base implements BaseInterface, Iterator {
     protected Vector2 position;
     protected String fract;
     protected Base target;
+    protected int ammount;
     
 
-    public Base(int attack, int defence, int shoot, int[] damage, double health, int speed, boolean delivery, boolean magic, String name, String fract) {
+    public Base(int attack, int defence, int shoot, int[] damage, int ammount, double health, int speed, boolean delivery, boolean magic, String name, String fract) {
         this.attack = attack;
         this.defence = defence;
         this.shoot = shoot;
@@ -45,7 +46,11 @@ public abstract class Base implements BaseInterface, Iterator {
         this.fract=fract;
         this.target=null;
         this.damageValue=0;
+        this.ammount=ammount;
 
+    }
+
+    public Base(int i, int j, int k, int[] ls, int l, int m, boolean c, boolean b, String string2, String string) {
     }
 
     public Vector2 getPosition() {return position;}

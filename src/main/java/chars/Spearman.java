@@ -5,10 +5,11 @@ import java.util.List;
 
 public class Spearman extends Base {
     private String fraction;
-    public Spearman(ArrayList<Base> gang, int x, int y, String fraction, int fieldSize) {
+    public Spearman(ArrayList<Base> gang, int x, int y, int ammount, String fraction, int fieldSize) {
         super(4, 5, 0, new int[]{1,3}, 10, 4, false, false, "Spearman",fraction);
         super.gang = gang;
         super.position = new Vector2(x, y);
+        this.ammount=ammount;
     }
     @Override
     public void step(Party party) {
